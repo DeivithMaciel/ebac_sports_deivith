@@ -6,7 +6,7 @@ const ProductsComponent = () => {
   const { data: Products, isLoading, isError } = useObterProductsQuery()
 
   if (isLoading) {
-    return <div>Carregando Products...</div>
+    return <div>Carregando Produtos...</div>
   }
 
   if (isError) {

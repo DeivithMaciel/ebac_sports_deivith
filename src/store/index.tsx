@@ -5,8 +5,8 @@ import { productsApi } from '../services/api'
 
 export const store = configureStore({
   reducer: {
-    carrinho: cartReducer,
-    favoritos: favoritesReducer,
+    cart: cartReducer,
+    favorites: favoritesReducer,
     [productsApi.reducerPath]: productsApi.reducer
   },
   middleware: (getDefaultMiddleware) =>

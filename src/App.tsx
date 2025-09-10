@@ -2,7 +2,7 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { GlobalStyle } from './styles'
 import Header from './components/Header'
-import ProdutosComponent from './containers/Produtos'
+import ProductsComponent from './containers/Produtos'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <GlobalStyle />
       <div className="container">
         <Header />
-        <ProdutosComponent />
+        <ProductsComponent />
       </div>
     </Provider>
   )

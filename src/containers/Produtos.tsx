@@ -1,12 +1,12 @@
 import Produto from '../components/Produto'
 import * as S from './styles'
-import { useObterProdutosQuery } from '../services/api'
+import { useObterProductsQuery } from '../services/api'
 
-const ProdutosComponent = () => {
-  const { data: produtos, isLoading, isError } = useObterProdutosQuery()
+const ProductsComponent = () => {
+  const { data: Products, isLoading, isError } = useObterProductsQuery()
 
   if (isLoading) {
-    return <div>Carregando produtos...</div>
+    return <div>Carregando Products...</div>
   }
 
   if (isError) {
@@ -14,12 +14,12 @@ const ProdutosComponent = () => {
   }
 
   return (
-    <S.Produtos>
-      {produtos?.map((produto) => (
+    <S.Products>
+      {Products?.map((produto) => (
         <Produto key={produto.id} product={produto} />
       ))}
-    </S.Produtos>
+    </S.Products>
   )
 }
 
-export default ProdutosComponent
+export default ProductsComponent

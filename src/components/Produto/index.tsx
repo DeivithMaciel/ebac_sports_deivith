@@ -13,8 +13,8 @@ export const paraReal = (valor: number) =>
 
 const ProdutoComponent = ({ product }: { product: Product }) => {
   const dispatch = useDispatch()
-  const favoritos = useSelector((state: RootReducer) => state.favoritos.items)
-  const isFavorite = favoritos.some((f) => f.id === product.id)
+  const favorites = useSelector((state: RootReducer) => state.favorites.items)
+  const isFavorite = favorites.some((f) => f.id === product.id)
 
   return (
     <S.Produto>
@@ -26,10 +26,10 @@ const ProdutoComponent = ({ product }: { product: Product }) => {
         <strong>{paraReal(product.preco)}</strong>
       </S.Prices>
       <S.BtnComprar onClick={() => dispatch(addOrRemove(product))}>
-        {isFavorite ? '- Remover dos favoritos' : '+ Adicionar aos favoritos'}
+        {isFavorite ? '- Remover dos favorites' : '+ Adicionar aos favorites'}
       </S.BtnComprar>
       <S.BtnComprar onClick={() => dispatch(add(product))}>
-        Adicionar ao carrinho
+        Adicionar ao cart
       </S.BtnComprar>
     </S.Produto>
   )
